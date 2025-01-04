@@ -1,0 +1,715 @@
+\href{\href{}{}}{}\documentclass[14pt]{extarticle} % Подключаем расширенный класс с поддержкой 14pt
+\usepackage[T2A]{fontenc}      % Кодировка для кириллицы
+\usepackage[utf8]{inputenc}     % Кодировка ввода UTF-8
+\usepackage[russian]{babel}     % Пакет для русского языка
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{amsmath, amssymb} % Пакеты для математических символов
+\usepackage[a4paper, margin=1in]{geometry} % Настройка полей
+\setlength{\parindent}{0pt} % Убирает отступ в начале абзаца
+
+\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false, % Отключаем цвет ссылок
+    hidelinks,        % Убираем рамки и цвета, делаем ссылки как обычный текст
+    pdfborder={0 0 0} % Полностью убираем рамки вокруг ссылок
+}
+
+\renewcommand{\contentsname}{Оглавление}
+
+\setlength{\cftbeforesecskip}{0pt}     % Убирает отступы между разделами
+\setlength{\cftbeforesubsecskip}{0pt}  % Убирает отступы между подразделами
+\setcounter{tocdepth}{2}
+
+% Настройка стиля заголовков
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Настройка точек в содержании для разделов и подразделов
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}     % Для разделов
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}  % Для подразделов
+
+% Установка обычного шрифта для разделов в содержании
+\renewcommand{\cftsecfont}{\normalfont}        % Обычный шрифт для разделов
+\renewcommand{\cftsecpagefont}{\normalfont}    % Обычный шрифт для номеров страниц разделов
+
+
+\begin{document}
+
+\linespread{1,5}
+% Первая страница (без номера)
+\thispagestyle{empty} % Убираем номер на первой странице
+\begin{titlepage}
+    \newpage
+    \begin{center}
+    {\bfseries Министерство образования и науки Российской Федерации \\
+    ВГУ}
+    \vspace{1cm}
+
+     Кафедра Технологий обработки и защиты информации
+     \vspace{2em}
+
+     \end{center}
+
+    \vspace{5em}
+
+    \begin{center}
+    \Large
+\textbf{Задание по дисциплине}
+
+\normalsize
+\textbf{«Математические Методы в Современных Информационных Технологиях»}
+
+(1 курс магистратуры ИСиТ, СПИИ, 2024-2025 уч. год.)
+
+Лобода А.В., Каверина В.К.
+     \end{center}
+    \vspace{5em}
+
+
+   \vbox{%
+\hfill%
+\vbox{%
+\hbox{\textbf{Выполнили:} магистранты 1 курса}%
+\hbox{направления «Информационные системы и технологии»}%
+\hbox{профиля «Системы прикладного искусственного интеллекта»}%
+\hbox{группы 15}%
+\hbox{Волченко Полина Владимировна}%
+\hbox{Смотрова Кристина Владимировна}%
+\hbox{}%
+}%
+}
+
+    \begin{center}
+    \vspace{10em}
+    2024
+    \end{center}
+
+    \end{titlepage}
+\newpage
+
+% Добавляем содержание
+\tableofcontents
+\newpage
+
+\section{Постановка задачи}
+
+Задание L1.16. \\
+
+Необходимо найти невырожденные 7-мерные орбиты в пространстве $ \mathbb{C}^4 $ (или показать их отсутствие) у 7-мерной алгебры Ли. В положительном случае, проинтегрировать алгебру Ли.
+
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\arrayrulewidth}{0.3mm}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        & $e_1$ & $e_2$ & $e_3$ & $e_4$ & $e_5$ & $e_6$ & $e_7$ \\
+        \hline
+        $e_1$ & & $e_3$ & & & & & $e_1$ + $e_4$ \\
+        \hline
+        $e_2$ & & & & & & $e_2$ & \\
+        \hline
+        $e_3$ & & & & & & $e_3$ & $e_3$\\
+        \hline
+        $e_4$ & & & & & & & $e_4$ \\
+        \hline
+        $e_5$ & & & & & & $a$$e_5$ & $b$$e_5$\\
+        \hline
+        $e_6$ & & & & & & & \\
+        \hline
+        $e_7$ & & & & & & & \\
+        \hline
+    \end{tabular}
+    \caption{Матрица коммутаторов полей}
+\end{table}
+
+\newpage
+\section{Проверка алгебры}
+
+Проверка абелевых алгебр условием Якоби необходима для определения интегрируемости системы уравнений. Тождества Якоби для структурных констант являются необходимым и достаточным условием интегрируемости этих уравнений. \\
+
+Для проверки возьмем комбинацию \(e_1, e_2\) и \(e_3:\) \\
+
+[[e_1, e_2], e_3] + [[e_3, e_1], e_2] + [[e_2, e_3], e_1] = 0 \\
+
+1)
+\[
+ [[e_1, e_2], e_6]: \\
+\]
+\[
+[e_1, e_2] = e_3
+\]
+\[
+[e_3, e_3] = 0
+\] \\
+
+2)
+\[
+[[e_3, e_1], e_2]: \\
+\]
+\[
+[e_3, e_1] = 0
+\]
+\[
+[0, e_2] = 0
+\] \\
+
+3)
+\[
+[[e_2, e_3], e_1]: \\
+\]
+\[
+[e_2, e_3] = 0
+\]
+\[
+[0, e_1] = 0
+\]
+
+\[
+0 + 0 + 0 = 0
+\]
+
+В следствии чего можем сделать вывод, что Тождеcтво Якоби выполняется. \\
+
+\\
+Дальнейшие проверки, оставшихся 34-х комбинаций, были сделаны с помощью программы на языке Python.
+\\
+
+В результате было получено, что все комбинации удовлетворяют условию Якоби.
+\newpage
+\section{Решение}
+Согласно лемме~[1], голоморфной заменой координат пространства $ \mathbb{C}^4 $ базис
+\( (e_2, e_3, e_4, e_5) \) из четырёх полей, образующих 4-мерную абелеву подалгебру, можно привести к одному из трёх видов:
+
+\begin{enumerate}
+    \item
+    \[
+    \begin{aligned}
+    e_1 &: (1, 0, 0, 0), \\
+    e_3 &: (0, 1, 0, 0), \\
+    e_4 &: (0, 0, 1, 0), \\
+    e_5 &: (0, 0, 0, 1).
+    \end{aligned}
+    \]
+
+    \item
+    \[
+    \begin{aligned}
+    e_2 &: (0, b_2(z_1), c_2(z_1), d_2(z_1)), \\
+    e_3 &: (0, 1, 0, 0), \\
+    e_4 &: (0, 0, 1, 0), \\
+    e_5 &: (0, 0, 0, 1).
+    \end{aligned}
+    \]
+
+    \item
+    \[
+    \begin{aligned}
+    e_2 &: (1, 0, 0, 0), \\
+    e_3 &: (0, 0, c_3(z_1), d_3(z_1)), \\
+    e_4 &: (0, 0, 1, 0), \\
+    e_5 &: (0, 0, 0, 1).
+    \end{aligned}
+    \]
+\end{enumerate}
+
+\subsection{Первый случай}
+
+Рассмотрим 1-й случай. Поля \( e_2, e_3, e_4, e_5 \) образуют абелеву подалгебру, так как их коммутаторы попарно между собой дают ноль. \\
+
+Поля \( e_2, e_3, e_4, e_5 \) выглядят следующим образом:
+\[
+e_2 = (1, 0, 0, 0) = \frac{\partial}{\partial z_1},
+\]
+\[
+e_3 = (0, 1, 0, 0) = \frac{\partial}{\partial z_2},
+\]
+\[
+e_4 = (0, 0, 1, 0) = \frac{\partial}{\partial z_3},
+\]
+\[
+e_5 = (0, 0, 0, 1) = \frac{\partial}{\partial z_4}.
+\]
+Для нахождения остальных полей (\( e_1, e_6, e_7 \)), рассмотрим коммутаторы между ними и полями из абелевой подалгебры, а также между собой. \\
+
+Сначала найдем поле $e_1$.\\
+\[
+[e_2, e_1] = -e_3;
+\]
+\[
+[e_3, e_1] = 0;
+\]
+\[
+[e_4, e_1] = 0;
+\]
+\[
+[e_5, e_1] = 0;
+\]\\
+Рассмотрим коммутатор $[e_2, e_1]$:\\
+\[
+[e_2, e_1] = -e_3 = (0, -1, 0, 0) = e_2(e_1) - e_1(e_2) =
+\]
+\[
+= 0 - e_1(e_2) = - e_1(e_2) = - \frac{\partial }{\partial z_2};
+\]
+
+\[
+\frac{\partial b_1}{\partial z_1} = -1 \implies b_1(z) = -z_1 + B_1.
+\]
+
+В остальных случаях поле $e_1$ не зависит от переменных $z_2, z_3, z_4$.\\
+Поле \( e_1 \) имеет следующий вид:
+\[
+\boldsymbol{e_1 = \big(A_1; -z_1 + B_1; C_1; D_1\big)}.
+\]
+По аналогии мы получим следующие коммутаторы:
+\[
+\boldsymbol{e_6 = (z_1 + A_6; z_2 + B_6; C_6; az_4 + D_6)}.
+\]
+\[
+\boldsymbol{e_7 = \big(A_7; z_2 + B_7; z_3 + C_7; bz_4 + D_7\big)}.
+\]
+Общий вид будет такой:
+\[
+e_1 = \big( A_1; -z_1 + B_1; C_1; D_1 \big)
+\]
+\[
+e_2 = \big( 1; 0; 0; 0 \big)
+\]
+\[
+e_3 = \big( 0; 1; 0; 0 \big)
+\]
+\[
+e_4 = \big( 0; 0; 1; 0 \big)
+\]
+\[
+e_5 = \big( 0; 0; 0; 1 \big)
+\]
+\[
+e_6 = \big( z_1 + A_6; z_2 + B_6; C_6; az_4 + D_6 \big)
+\]
+\[
+e_7 = \big( A_7; z_2 + B_7; z_3 + C_7; bz4 + D_7 \big)
+\]
+Далее рассмотрим следующий коммутатор.
+\[
+[e_1, e_6] = 0;
+\]
+\[
+[e_1, e_6] = (0, 0, 0, 0) = e_1(e_6) - e_6(e_1) =
+\]
+
+\[
+= \left(A_1 * \frac{\partial}{\partial z_1}\right)
++ \left((-z_1 + B_1) * \frac{\partial}{\partial z_2}\right)
++ \left(D_1 * a * \frac{\partial}{\partial z_4}\right) -
+\]
+\[
+- \left((z_1 + A_6) * (-1) * \frac{\partial}{\partial z_2}\right) = 0;
+\]
+
+\[
+\begin{cases}
+-z_1 + B_1 + z_1 + A_6 = 0 \\
+A_1 = 0 \\
+aD_1 = 0
+\end{cases}
+\implies
+\begin{cases}
+B_1 = -A_6 \\
+A_1 = 0 \\
+aD_1 = 0
+\end{cases}
+\]\\
+
+Случай №1: $D_1 = 0$; \\
+Рассмотрим коммутатор $[e_6, e_7]$
+\[
+[e_6, e_7] = e_6(e_7) - e_7(e_6) =
+\]
+\[
+= \left((z_2 + B_6) * \frac{\partial}{\partial z_2}\right)
++ \left(C_6 * \frac{\partial}{\partial z_3}\right)
++ \left((az_4 + D_6) * b * \frac{\partial}{\partial z_4}\right) -
+\]
+
+\[
+- \left(A_7 * \frac{\partial}{\partial z_1}\right)
+- \left((z_2 + B_7) * \frac{\partial}{\partial z_2}\right)
+- \left((bz_4 + D_7) * a * \frac{\partial}{\partial z_4}\right) = 0;
+\]
+
+\[
+\begin{cases}
+z_2 + B_6 - z_2 - B_7 = 0 \\
+abz_4 + bD_6 - abz_4 - aD_7 = 0 \\
+C_6 = 0 \\
+A_7 = 0
+\end{cases}
+\implies
+\begin{cases}
+B_7 = B_6 \\
+D_7 = \frac{bD_6}{a} \\
+C_6 = 0 \\
+A_7 = 0
+\end{cases}
+\]\\
+
+Далее рассмотрим коммутатор $[e_1, e_7]$:
+\[
+[e_1, e_7] = e_1(e_7) - e_7(e_1) =
+\]
+
+\[
+= \left((-z_1 - A_6) * \frac{\partial}{\partial z_2}\right)
++ \left(C_1 * \frac{\partial}{\partial z_3}\right) =
+\]
+
+\[
+= (-z_1 - A_6)e_3 + C_1e_4;
+\]
+
+\[
+[e_1, e_7] = e_1 + e_4;
+\]
+
+\[
+e_1 + e_4 = \left(A_1 + 0; -z_1 - A_6 + 0; C_1 + 1; 0 \right);
+\]
+
+\[
+C_1 = C_1 + 1;
+\]
+
+\[
+0 = 1;
+\]
+
+Получили \textbf{противоречие}.\\\\
+Рассмотрим случай №2: a = 0;
+\[
+[e_6, e_7] = e_6(e_7) - e_7(e_6) =
+\]
+
+\[
+= \left( (z_2 + B_6) * \frac{\partial}{\partial z_2} \right)
++ \left( C_6 * \frac{\partial}{\partial z_3} \right)
++ \left( bD_6 * \frac{\partial}{\partial z_4} \right) -
+\]
+
+\[
+- \left( A_7 * \frac{\partial}{\partial z_1} \right)
+- \left( (z_2 + B_7) * \frac{\partial}{\partial z_2} \right) = 0;
+\]
+
+Получаем: \\
+\[
+\begin{cases}
+z_2 + B_6 - z_2 - B_7 = 0 \\
+C_6 = 0 \\
+bD_6 = 0 \\
+A_7 = 0
+\end{cases}
+\implies
+\begin{cases}
+B_7 = B_6 \\
+C_6 = 0 \\
+bD_6 = 0 \\
+A_7 = 0 \\
+\end{cases}
+\]\\
+
+
+Рассмотрим случай №2.1: b = 0; \\
+
+\[
+[e_1, e_7] = e_1(e_7) - e_7(e_1) =
+\]
+
+\[
+= \left( (-z_1 - A_6) * \frac{\partial}{\partial z_2} \right)
++ \left( C_1 * \frac{\partial}{\partial z_3} \right) =
+\]
+
+\[
+(-z_1 + B_1)e_3 + C_1e_4;
+\]
+
+\[
+e_1 + e_4 = \left(A_1 + 0; -z_1 - A_6 + 0; C_1 + 1; 0 \right)
+\]
+
+\[
+C_1 = C_1 + 1;
+\]
+
+\[
+0 = 1;
+\]
+
+Получили \textbf{противоречие}.\\\\
+Рассмотрим случай №2.2: $D_6 = 0$; \\
+
+\[
+[e_1, e_7] = e_1(e_7) - e_7(e_1) =
+\]
+
+\[
+= \left( (-z_1 - A_6) * \frac{\partial}{\partial z_2} \right)
++ \left( C_1 * \frac{\partial}{\partial z_3} \right)
++ \left( D_1 * \frac{\partial}{\partial z_4} \right)
+\]
+
+\[
+(-z_1 + B_1)e_3 + C_1e_4;
+\]
+
+\[
+e_1 + e_4 = \left(A_1 + 0; -z_1 - A_6 + 0; C_1 + 1; 0 \right)
+\]
+
+\[
+C_1 = C_1 + 1;
+\]
+
+\[
+0 = 1;
+\]
+Получили \textbf{противоречие}.
+\subsection{Второй случай}
+
+Рассмотрим 2-й случай. Поля \( e_1, e_3, e_4, e_5 \) образуют абелеву подалгебру, так как их коммутаторы попарно между собой дают ноль. \\
+
+Поля \( e_2, e_3, e_4, e_5 \) выглядят следующим образом:
+\[
+e_2 = (0, b_2(z_1), c_2(z_1), d_2(z_1)),
+\]
+\[
+e_3 = (0, 1, 0, 0),
+\]
+\[
+e_4 = (0, 0, 1, 0),
+\]
+\[
+e_5 = (0, 0, 0, 1).
+\]
+
+Для нахождения остальных полей (\( e_1, e_6, e_7 \)), рассмотрим коммутаторы между ними и полями из абелевой подалгебры, а также между собой. \\
+
+В результате чего мы получили такие поля:
+\[
+\boldsymbol{e_1 = \big( A_1e^{-z_1};\ B_1;\ -z_1 + C_1;\ D_1e^{(b - 1)z_1}\big);}
+\]
+\[
+\boldsymbol{e_2 = \big( 0; \frac{e^{z_1}}{A_1}; 0; 0\big);}
+\]
+\[
+\boldsymbol{e_3 = \big( 0; 1;\ 0;\ 0 \big);}
+\]
+\[
+\boldsymbol{e_4 = \big( 0; 0; 1; 0 \big);}
+\]
+\[
+\boldsymbol{e_5 = \big( 0; 0; 0; 1 \big);}
+\]
+\[
+\boldsymbol{e_6 = \big( 0;\ B_6;\ C_6;\ D_6 \big);}
+\]
+\[
+\boldsymbol{e_7 = \big( 1;\ z_2;\ z_3;\ bz_4 \big);}
+\]\\
+Как можно заметить, в данном случае получаем \textbf{вырождение}.
+
+\subsection{Третий случай}
+
+Рассмотрим 3-й случай. Поля \( e_2, e_3, e_4, e_5 \) образуют абелеву подалгебру, так как их коммутаторы попарно между собой дают ноль. \\
+
+Поля \( e_2, e_3, e_4, e_5 \) выглядят следующим образом:
+\[
+e_2 = (0, 1, 0, 0),
+\]
+\[
+e_3 = (0, 0, c_3(z_1), d_3(z_1)),
+\]
+\[
+e_4 = (0, 0, 1, 0),
+\]
+\[
+e_5 = (0, 0, 0, 1).
+\]
+Для нахождения остальных полей (\( e_1, e_6, e_7 \)), рассмотрим коммутаторы между ними и полями из абелевой подалгебры, а также между собой. \\
+
+В результате получаем следующие поля:\\
+
+\[
+\boldsymbol{e_1 = \big( 0;\ B_1e^{z_1};\ C_1;\  -D_3e^{(a - 1)z_1}z_2 + D_1e^{-az_1}\big);}
+\]
+\[
+\boldsymbol{e_2 = \big( 0; 1; 0; 0\big);}
+\]
+\[
+\boldsymbol{e_3 = \big( 0; 0;\ 0;\ D_3e^{(a - 1)z_1} \big);}
+\]
+\[
+\boldsymbol{e_4 = \big( 0; 0; 1; 0 \big);}
+\]
+\[
+\boldsymbol{e_5 = \big( 0; 0; 0; 1 \big);}
+\]
+\[
+\boldsymbol{e_6 = \big( 1;\ z_2;\ 0;\ az_4 \big);}
+\]
+\[
+\boldsymbol{e_7 = \big( A_7;\ B_7e^{z_1};\ C_7;\ bz_4 + D_7e^{az_1} \big);}
+\]
+
+Как можно заметить, в данном случае также получаем \textbf{вырождение}.
+
+\newpage
+\section{Интегрирование алгебры $T [7, [6, 25], 1, 1]$}
+
+Предложение 11. \textit{С точностью до локальных голоморфных преобразований лобальной реализации алгебры $T [7, [6, 25], 1, 1]$ в пространстве $\mathbb{C}^4$, удовлетворяющая условиям $A$ и $B$, имеет базис $\{e\}$}
+
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\arrayrulewidth}{0.3mm}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+    & $e_1$ & $e_2$ & $e_3$ & $e_4$ & $e_5$ & $e_6$ & $e_7$ \\
+        \hline
+        $e_1$ & & & & & & & $3e_1 + ae_2$\\
+        \hline
+        $e_2$ & & & & & & & $-ae_1+3e_2$\\
+        \hline
+        $e_3$ & & & & & $e_2$ & $e_1$ & $2e_3$\\
+        \hline
+        $e_4$ & & & & & $-e_1$ & $e_2$ & $2e_4$ \\
+        \hline
+        $e_5$ & & & & & & $e_4$ & $e_5-ae_6$ \\
+        \hline
+        $e_6$ & & & & & & & $ae_5+ae_6$ \\
+        \hline
+        $e_7$ & & & & & & & \\
+        \hline
+    \end{tabular}
+    \caption{Матрица коммутаторов полей алгебры $T [7[6,20],1,1]$}
+\end{table}
+
+
+
+\subsection{Проверка алгебры}
+
+Для проверки возьмем комбинацию \(e_1, e_2\) и \(e_6:\) \\
+
+[[e_1, e_2], e_6] + [[e_2, e_6], e_1] + [[e_6, e_1], e_2] = 0 \\
+
+1)
+\[
+ [[e_1, e_2], e_6]: \\
+\]
+\[
+[e_1, e_2] = 0
+\]
+\[
+[0, e_6] = 0
+\] \\
+
+2)
+\[
+[[e_2, e_6], e_1]: \\
+\]
+\[
+[e_2, e_6] = 0
+\]
+\[
+[0, e_6] = 0
+\] \\
+
+3)
+\[
+[[e_6, e_1], e_2]: \\
+\]
+\[
+[e_6, e_1] = 0
+\]
+\[
+[0, e_2] = 0
+\]
+
+Из полученных решений получаем следующий итог:
+\[
+0 + 0 + 0 = 0
+\]
+
+В следствии чего можем сделать вывод, что Тождество Якоби выполняется. \\
+\\
+Дальнейшие проверки оставшихся 34-х комбинаций были сделаны с помощью программы на языке Python.
+\\
+
+В результате было получено, что все комбинации удовлетворяют условию Якоби.
+
+\subsection{Решение}
+
+Искомая функция от восьми вещественных \(\Phi(x_1,x_2,x_3,x_4,y_1,y_2,y_3,y_4)\), должна подчиняться условию[5]:\newline
+Вещественная гиперповерхность
+\(M=\lbrace{\Phi=0}\rbrace\) является орбитой
+(интегральной поверхностью) голоморфной реализации алгебры Ли \(g\) ,
+если для каждого базисного поля этой алгебры выполняется условие
+касания \(M\) в виде
+\[
+\mathfrak{Re}\lbrace{e_k(\Phi)|_M\rbrace}=0
+\]\newline
+
+Также важна формула:
+\[
+\frac{\partial\Phi}{\partial z_k}=\frac{1}{2}(\frac{\partial\Phi}{\partial x_k}- i\frac{\partial\Phi}{\partial y_k})
+\]\newline
+
+Поля алгебры Ли  [7, [6, 25],1, 1]: \\
+
+$e_1 = (0, 0, 0, 1)$, \\
+
+$e_2 = (0, 0, 1, 0)$, \\
+
+$e_3 = (0, 1, 0, 0)$, \\
+
+$e_4 = (0, i \varepsilon, i \varepsilon z_1, z_1)$, \\
+
+$e_5 = (1, 0, z_2, 0)$, \\
+
+$e_6 = \left( i \varepsilon, i \varepsilon z_1, i \varepsilon z_1^2, z_2 + (1/2)z_1^2 \right)$, \\
+
+$e_7 = \left( (1 - i m \varepsilon) z_1, 2 z_2 - (1/2) i m \varepsilon z_1^2, 3 z_3 + m z_4 - \frac{i}{m} \varepsilon z_1^3, m z_3 + 3 z_4 - (1/6) m z_1^3 \right)$.\\
+
+Варинта решения будет представлен программным решением среды Maple. Исходный код и решеним представлено в приложении B.
+
+\newpage
+\phantomsection % Создает точку привязки для правильной работы ссылок
+\addcontentsline{toc}{section}{Список использованных источников}
+\begin{center}
+    \Large \textbf{Список использованных источников}
+\end{center}
+
+\begin{enumerate}
+    \item https://edu.vsu.ru/mod/resource/view.php?id=1009551
+    \item Parry А.R. A Classification of Real Indecomposable Solvable Lie Algebras of Small Dimension with Codimension One Nilradicals// Master’s thesis "--- Logan, Utah, 2007
+
+    \item {\it Vu~A. L., Nguyen~T. A., Nguyen~T. T. C., Nguyen~T. T. M., Vo~T. N.} Classification of 7-dimensional solvable Lie algebras having 5-dimensional nilradicals// Communications in Algebra. 2023. Vol. 51, № 5. P. 1866--1885.
+
+\end{enumerate}
+\newpage
+\begin{center}
+    \Large \textbf{Приложение А}
+\end{center}
+\newpage
+\begin{center}
+    \Large \textbf{Приложение В}
+\end{center}
+
+\end{document}
