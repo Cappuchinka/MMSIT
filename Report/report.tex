@@ -86,40 +86,45 @@
         $e_7$ & & & & & & & $\cdot$ \\
         \hline
     \end{tabular}
-    \caption{Матрица коммутаторов полей}
+    \caption{Таблица коммутационных соотношений полей Алгебры L1.16}
 \end{table}
 
 Проверим равенство Якоби для всех сочетаний векторов. \\
 
-Для проверки возьмем комбинацию \(e_1, e_2\) и \(e_3:\) 
+Рассмотрим комбинацию \(e_1, e_2\) и \(e_3:\) 
 
-$$[[e_1, e_2], e_3] + [[e_3, e_1], e_2] + [[e_2, e_3], e_1] = 0$ 
+$$[[e_1, e_2], e_3] + [[e_3, e_1], e_2] + [[e_2, e_3], e_1] = 0$ \\
 
-1)
+\begin{minipage}[t]{0.2\textwidth}
+\textbf{1)}\\
 \[
- [[e_1, e_2], e_3]: \\
+[[e_1, e_2], e_3]: 
 \]
 \[
 [e_1, e_2] = e_3 
 \]
 \[
 [e_3, e_3] = 0 
-\] 
-
-2)
+\]
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.2\textwidth}
+\textbf{2)}\\
 \[
-[[e_3, e_1], e_2]: \\
+[[e_3, e_1], e_2]: 
 \]
 \[
 [e_3, e_1] = 0 
 \]
 \[
 [0, e_2] = 0 
-\] 
-
-3) 
+\]
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.2\textwidth}
+\textbf{3)}\\
 \[
-[[e_2, e_3], e_1]: \\
+[[e_2, e_3], e_1]: 
 \]
 \[
 [e_2, e_3] = 0 
@@ -127,6 +132,7 @@ $$[[e_1, e_2], e_3] + [[e_3, e_1], e_2] + [[e_2, e_3], e_1] = 0$
 \[
 [0, e_1] = 0 
 \]
+\end{minipage}\\
 
 \[
 0 + 0 + 0 = 0
@@ -135,10 +141,10 @@ $$[[e_1, e_2], e_3] + [[e_3, e_1], e_2] + [[e_2, e_3], e_1] = 0$
 В следствии чего можем сделать вывод, что Тождеcтво Якоби выполняется. \\
 
 \\
-Оно выполняется, значит, представленный вариант является алгеброй. Найдем 4 базисных вектора, которые образуют абелеву подалгебру, и перейдем к рассмотрению 3 возможных случаев. 
+По аналогии проверим равенство Якоби для других сочетаний векторов. Оно выполняется, значит, представленный вариант является алгеброй. Найдем 4 базисных вектора, которые образуют абелеву подалгебру, и перейдем к рассмотрению 3 возможных случаев. 
 \\
 
-\subsection{Первый базис}
+\subsection{Первый случай}
 \begin{align*}
 e_2 &= (1,0,0,0) = \frac{\partial}{\partial z_1}, \\
 e_3 &= (0,1,0,0) = \frac{\partial}{\partial z_2}, \\
@@ -170,7 +176,7 @@ e_6 &= (z_1 + A_6, z_2 + B_6, C_6, az_4 + D_6), \, A_6, B_6, C_6, D_6 \in C; \\
 e_7 &= (A_7, z_2 + B_7, z_3 + C_7, bz_4 + D_7), \, A_7, B_7, C_7, D_7 \in C.
 \end{align*}
 
-Выполним проверку полученных векторов:
+Прокоммутируем полученные вектора:
 \[
 [e_1, e_6] = 0;
 \]
@@ -201,7 +207,7 @@ aD_1 = 0
 \end{cases}
 \]\\
 
-Случай №1: $D_1 = 0$; \\
+Случай №1: $D_1 = 0, a \neq 0$; \\
 Рассмотрим коммутатор $[e_6, e_7]$
 \[
 [e_6, e_7] = e_6(e_7) - e_7(e_6) = 
@@ -356,7 +362,7 @@ C_1 = C_1 + 1;
 \]
 Получили \textbf{противоречие}. 
 
-\subsection{Второй базис} 
+\subsection{Второй случай} 
 \begin{align*}
 e_2 &= (0,b_2(z_1),c_2(z_1),d_2(z_1)), \\
 e_3 &= (0,1,0,0), \\
@@ -412,16 +418,16 @@ $$e_6 = (a_6(z_1), b_6(z_1) + z_2, c_6(z_1), d_6(z_1) + az_4).$$
 \boldsymbol{e_1 = \big( A_1e^{-z_1};\ B_1;\ -z_1 + C_1;\ D_1e^{(b - 1)z_1}\big);}
 \]
 \[
-\boldsymbol{e_2 = \big( 0; \frac{e^{z_1}}{A_1}; 0; 0\big);}
+\boldsymbol{e_2 = \big( 0;\ \frac{e^{z_1}}{A_1}; 0;\ 0\big);}
 \]
 \[
-\boldsymbol{e_3 = \big( 0; 1;\ 0;\ 0 \big);}
+\boldsymbol{e_3 = \big( 0;\ 1;\ 0;\ 0 \big);}
 \]
 \[
-\boldsymbol{e_4 = \big( 0; 0; 1; 0 \big);}
+\boldsymbol{e_4 = \big( 0;\ 0;\ 1;\ 0 \big);}
 \]
 \[
-\boldsymbol{e_5 = \big( 0; 0; 0; 1 \big);}
+\boldsymbol{e_5 = \big( 0;\ 0;\ 0;\ 1 \big);}
 \]
 \[
 \boldsymbol{e_6 = \big( 0;\ B_6;\ C_6;\ D_6 \big);}
@@ -429,9 +435,9 @@ $$e_6 = (a_6(z_1), b_6(z_1) + z_2, c_6(z_1), d_6(z_1) + az_4).$$
 \[
 \boldsymbol{e_7 = \big( 1;\ z_2;\ z_3;\ bz_4 \big);}
 \]\\
-Обращая внимание на поля $(e_2, e_3)$ мы замечаем, что тут у нас \textbf{вырождение}.
+Обращая внимание на поля $(e_2, e_3)$ мы видим, что тут у нас \textbf{вырождение},  так как в поле $e_2$ на второй позиции $\frac{e^{z_1}}{A_1}$, когда в поле $e_3$ на этой же позиции 2.
 
-\subsection{Третий базис} 
+\subsection{Третий случай} 
 \begin{align*}
 e_2 &= (0,1,0,0), \\
 e_3 &= (0,0,c_3(z_1),d_3(z_1)), \\
@@ -450,24 +456,32 @@ $$e_1 = (a_1(z_1,z_2), b_1(z_1,z_2), c_1(z_1,z_2), d_1(z_1,z_2)).$$
 Отсюда мы получаем $\frac{\partial a_1 }{\partial z_2} = 0 \text{ и } \frac{\partial b_1 }{\partial z_2} = 0 \text{ и } \frac{\partial c_1 }{\partial z_2} = -c_3(z_1) \text{ и } \frac{\partial d_1 }{\partial z_2} = -d_3(z_1)$\\
 
 Тогда $e_1$:
-$$e_1 = (a_1(z_1), b_1(z_1), -c_3(z_1) \cdot  z_2, -d_3(z_1)\cdot  z_2).$$
+$$e_1 = (a_1(z_1), b_1(z_1), -c_3(z_1) \cdot  z_2 + c_1(z_1), -d_3(z_1)\cdot  z_2 + d_1(z_1).$$
 
 Рассмотрим $[e_3,e_1] = 0$
 
 \begin{align*}
 [e_3,e_1] &= e_3(e_1) - e_1(e_3) = \\
 &= 0 - a_1(z_1) \cdot \left(
-\frac{\partial c_3}{\partial z_1} \cdot \frac{\partial}{\partial z_3}, 
-\frac{\partial c_3}{\partial z_1} \cdot \frac{\partial}{\partial z_4}
+\frac{\partial c_3(z_1) \cdot z_2 + c_1(z_1)}{\partial z_1} \cdot \frac{\partial}{\partial z_3}, 
+\frac{\partial d_3(z_1) \cdot z_2 + d_1(z_1)}{\partial z_1} \cdot \frac{\partial}{\partial z_4}
 \right) = 0;
 \end{align*}
 
-Если $a_1(z_1) = 0$,  \text{ то } $$e_1 = (0, b_1(z_1), -c_3(z_1) \cdot  z_2, -d_3(z_1)\cdot  z_2).$$
+Если $a_1(z_1) = 0$,  \text{ то } $$e_1 = (0, b_1(z_1), -c_3(z_1) \cdot  z_2+ c_1(z_1), -d_3(z_1)\cdot  z_2 + d_1(z_1)).$$
 
 Если $\left(
-\frac{\partial c_3}{\partial z_1} \cdot \frac{\partial}{\partial z_3}, 
-\frac{\partial c_3}{\partial z_1} \cdot \frac{\partial}{\partial z_4}
-\right) = 0$,  \text{ то } $$ \frac{\partial c_3(z_1)}{\partial z_1} = 0 => c_3(z_1)=C_3 \text{ и } \frac{\partial d_3(z_1)}{\partial z_1} = 0 => d_3(z_1)=D_3. \text{ Тогда } e_3 = (0, 0, C_3 , D_3). $$ 
+\frac{\partial c_3(z_1)}{\partial z_1} \cdot \frac{\partial}{\partial z_3}, 
+\frac{\partial d_3(z_1)}{\partial z_1} \cdot \frac{\partial}{\partial z_4}
+\right) = 0, $  то 
+\\
+
+$$ \frac{\partial c_3(z_1))}{\partial z_1} = 0 \implies c_3(z_1)= C_3,  
+\text{ и} $$
+\\ 
+$$ \frac{\partial d_3(z_1)}{\partial z_1} = 0 \implies d_3(z_1)= D_3. $$
+\\
+Тогда $e_3 = (0, 0, C_3 , D_3). $
 \\
 
 \textbf{Вычислим $e_7$:}
@@ -483,7 +497,7 @@ $$e_7 = (a_7(z_1,z_3,z_4), b_7(z_1,z_3,z_4), c_7(z_1,z_3,z_4), d_7(z_1,z_3,z_4))
 Тогда $e_7$:
 $$e_7 = (a_7(z_1), b_7(z_1), c_7(z_1) + z_3, d_7(z_1) + b \cdot z_4).$$
 
-При рассмотрение $[e_3,e_7] = e_3$ получаем: 
+При рассмотрении $[e_3,e_7] = e_3$ получаем: 
 \begin{equation*}
  \begin{cases}
    $$a_7(z_1) \cdot \frac{\partial c_3(z_1) }{\partial z_1} = 0$$ \\
@@ -491,7 +505,11 @@ $$e_7 = (a_7(z_1), b_7(z_1), c_7(z_1) + z_3, d_7(z_1) + b \cdot z_4).$$
  \end{cases}
 \end{equation*}
 
-Из $$a_7(z_1) \cdot \frac{\partial c_3(z_1) }{\partial z_1} = 0$$ следует, что $$a_7(z_1) = 0 => b = 1 \text{ или } \frac{\partial c_3(z_1) }{\partial z_1} = 0 => c_3(z_1)=C_3. \text{ Тогда } e_3 = (0, 0, C_3, d_3(z_1)). $$ 
+Из $$a_7(z_1) \cdot \frac{\partial c_3(z_1) }{\partial z_1} = 0$$ следует, что $$a_7(z_1) = 0 \implies b = 1 \text{ или } \frac{\partial c_3(z_1) }{\partial z_1} = 0 \implies c_3(z_1)=C_3. \text{ Тогда } e_3 = (0, 0, C_3, d_3(z_1)). $$ 
+
+Если $e_3 = (0, 0, C_3, D_3)$ и $a_7(z_1) \neq 0$, то $b = 1$. \\
+
+Если $a_1(z_1) = 0$ и $a_7(z_1) = 0$, то можно сразу говорить о том, что это вырождение. \\
 
 \textbf{Вычислим $e_6$:}
 $$e_6 = (a_6(z_1,z_2,z_3,z_4), b_6(z_1,z_2,z_3,z_4), c_6(z_1,z_2,z_3,z_4), d_6(z_1,z_2,z_3,z_4)).$$
@@ -506,44 +524,78 @@ $$e_6 = (a_6(z_1,z_2,z_4), b_6(z_1,z_2,z_4), c_6(z_1,z_2,z_4), d_6(z_1,z_2,z_4))
 Тогда $e_6$:
 $$e_6 = (a_6(z_1), b_6(z_1) + z_2, c_6(z_1), d_6(z_1) + a \cdot z_4).$$
 
-При рассмотрение $[e_3,e_6] = e_3$ получаем: 
+При рассмотрении $[e_3,e_6] = e_3$ получаем: 
 \begin{equation*}
  \begin{cases}
    $$c_3(z_1) + a_6(z_1) \cdot \frac{\partial c_3(z_1) }{\partial z_1} = 0$$ \\
-   $$d_3(z_1) + a_6(z_1) \cdot d_3(z_1) - a \cdot d_3(z_1)$$
+   $$d_3(z_1) + a_6(z_1) \cdot \frac{\partial d_3(z_1) }{\partial z_1}- a \cdot d_3(z_1) = 0$$
+ \end{cases}
+\end{equation*}\\
+
+Если $e_3 = (0, 0, C_3, d_3(z_1))$, то:
+\begin{equation*}
+ \begin{cases}
+   $$C_3 = 0$$ \\
+   $$d_3(z_1) - a \cdot d_3(z_1) + a_6(z_1) \cdot \frac{\partial d_3(z_1) }{\partial z_1} = 0$$
  \end{cases}
 \end{equation*}
 
-После данных вычислений мы стали коммутировать поля $(e_1, e_6, e_7)$ между собой и получили такие поля:
+Если $e_3 = (0, 0, C_3, d_3(z_1))$, то:
+\begin{equation*}
+ \begin{cases}
+   $$C_3 = 0$$ \\
+   $$D_3 = aD_3$$ \implies a = 1
+ \end{cases}
+\end{equation*}
+
+После данных вычислений мы стали коммутировать поля $(e_1, e_6, e_7)$ между собой и получили такие поля (в одном из случаев):
 
 
 \[
-\boldsymbol{e_1 = \big( 0;\ B_1 \cdot e^{z_1};\ C_1;\ -e^{(a-1)z_1}\cdot D_3 \cdot z_2 + e^{-az_1} \cdot D_1\big);}
+\boldsymbol{e_1 = \big( A_1;\ B_1 \cdot e^{z_1};\ C_1;\ D_1 \cdot e^{az_1} - D_3 \cdot e^{(a - 1)z_1} \cdot z_2 \big);}
 \]
 \[
-\boldsymbol{e_2 = \big( 0; 1; 0; 0\big);}
+\boldsymbol{e_2 = \big( 0;\ 1;\ 0;\ 0\big);}
 \]
 \[
-\boldsymbol{e_3 = \big( 0; 0;\ 0;\ D_3\cdot e^{(a-1)z_1} \big);}
+\boldsymbol{e_3 = \big( 0;\ 0;\ 0;\ D_3 \cdot e^{(a - 1)z_1} \big);}
 \]
 \[
-\boldsymbol{e_4 = \big( 0; 0; 1; 0 \big);}
+\boldsymbol{e_4 = \big( 0;\ 0;\ 1;\ 0 \big);}
 \]
 \[
-\boldsymbol{e_5 = \big( 0; 0; 0; 1 \big);}
+\boldsymbol{e_5 = \big( 0;\ 0;\ 0;\ 1 \big);}
 \]
 \[
-\boldsymbol{e_6 = \big( 1;\ z_2;\ 0;\ a \cdot z_4 \big);}
+\boldsymbol{e_6 = \big( 1;\ z_2;\ 0;\ az_4 \big);}
 \]
 \[
-\boldsymbol{e_7 = \big( A_7;\ B_7 \cdot e^{z_1};\ C_7;\ bz_4 + D_7 \cdot e^{az_1} \big);}
+\boldsymbol{e_7 = \big( A_7;\ B_7 \cdot e^{z_1};\ C_7;\ D_7 \cdot e^{z_1} \big);}
 \]\\
-Обращая внимание на поля $(e_3, e_5)$ мы замечаем, что тут у нас \textbf{вырождение}.
+Обращая внимание на поля $(e_3, e_5)$ мы видим, что тут у нас \textbf{вырождение}, так как в поле $e_3$ на четвертой позиции $D_3 \cdot e^{(a - 1)z_1}$, когда в поле $e_5$ на этой же позиции 4.\\
+
+В остальных случаях отличия только в полях $e_1$, $e_3$, $e_6$ и $e_7$.\\
+
+\begin{minipage}[t]{0.45\textwidth}
+\textbf{I.}\\
+$e_1 = (A_1;\ B_1 \cdot e^{z_1};\ C_1;\ D_1 \cdot e^{az_1})$;\\
+$e_3 = (0; 0; 0; D_3)$;\\
+$e_6 = (1;\ z_2;\ 0;\ az_4)$;\\
+$e_7 = (A_7;\ B_7 \cdot e^{z_1};\ C_7;\ D_7 \cdot e^{z_1})$.\\
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\textbf{II.}\\
+$e_1 = (A_1;\ B_1 \cdot e^{z_1};\ C_1;\ D_1 \cdot e^{az_1})$;\\
+$e_3 = (0; 0; 0; D_3)$;\\
+$e_6 = (1;\ z_2;\ 0;\ z_4)$;\\
+$e_7 = (0;\ B_7 \cdot e^{z_1};\ C_7;\ D_7 \cdot e^{z_1})$.\\
+\end{minipage}
+
+В этих случаях также встречается вырождение у полей $e_3$ и $e_5$.
 \pagebreak
 
 \section{Задание [7, [6,25], 1, 1]}
-
-С точностью до локальных голоморфных преобразований реализация в $\mathbb{C}^4$ 7-мерной алгебры [7, [6,25], 1, 1], содержащей ниль-радикал $N_{[6,25]}$, обязана иметь следующий базис:
 
 \begin{table}[h!]
     \centering
@@ -568,40 +620,45 @@ $$e_6 = (a_6(z_1), b_6(z_1) + z_2, c_6(z_1), d_6(z_1) + a \cdot z_4).$$
         $e_7$ & & & & & & & $\cdot$ \\
         \hline
     \end{tabular}
-    \caption{Матрица коммутаторов полей алгебры $T [7[6,25],1,1]$}
+    \caption{Таблица коммутационных соотношений полей алгебры $T [7[6,25],1,1]$}
 \end{table}
 
-Проверим равенство Якоби для всех сочетаний векторов. Оно выполняется, значит, представленный вариант является алгеброй. \\
+Проверим равенство Якоби для всех сочетаний векторов. \\
 
-Для проверки возьмем комбинацию \(e_1, e_2\) и \(e_6:\) \\
+Рассмотрим комбинацию \(e_1, e_2\) и \(e_6:\) \\
 
 $[[e_1, e_2], e_6] + [[e_2, e_6], e_1] + [[e_6, e_1], e_2] = 0$ \\
 
-1)
+\begin{minipage}[t]{0.2\textwidth}
+\textbf{1)}\\
 \[
- [[e_1, e_2], e_6]: \\
+[[e_1, e_2], e_6]: 
 \]
 \[
-[e_1, e_2] = 0
-\]
-\[
-[0, e_6] = 0 
-\] \\
-
-2)
-\[
-[[e_2, e_6], e_1]: \\
-\]
-\[
-[e_2, e_6] = 0
+[e_1, e_2] = 0 
 \]
 \[
 [0, e_6] = 0 
-\] \\
-
-3) 
+\]
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\textbf{2)}\\
 \[
-[[e_6, e_1], e_2]: \\
+[[e_2, e_6], e_1]: 
+\]
+\[
+[e_2, e_1] = 0 
+\]
+\[
+[0, e_2] = 0 
+\]
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.2\textwidth}
+\textbf{3)}\\
+\[
+[[e_6, e_1], e_2]: 
 \]
 \[
 [e_6, e_1] = 0 
@@ -609,15 +666,20 @@ $[[e_1, e_2], e_6] + [[e_2, e_6], e_1] + [[e_6, e_1], e_2] = 0$ \\
 \[
 [0, e_2] = 0 
 \]
+\end{minipage}\\
 
 Из полученных решений получаем следующий итог:
 \[
 0 + 0 + 0 = 0
 \]
 
-В следствии чего можем сделать вывод, что Тождество Якоби выполняется. \\
+В следствии чего можем сделать вывод, что Тождество Якоби выполняется. 
+\\
 
-Данные нам поля этой алгебры выглядят так:
+По аналогии проверим равенство Якоби для других сочетаний векторов. Оно выполняется, значит, представленный вариант является алгеброй. 
+\\
+
+С точностью до локальных голоморфных преобразований реализация в $\mathbb{C}^4$ 7-мерной алгебры [7, [6,25], 1, 1], содержащей ниль-радикал $N_{[6,25]}$, обязана иметь следующий базис:
 \begin{align*}
 e_1 &= (0,0,0,1), \\
 e_2 &= (0,0,1,0), \\
@@ -634,29 +696,91 @@ e_7 &= ((1 - i m \varepsilon) z_1, 2 z_2 - (1/2) i m \varepsilon z_1^2, 3 z_3 + 
 
 При коммутировании полученных полей мы получили такой результат: \\
 
-$[e6, e7] = \left(i \varepsilon + m \varepsilon^2, i \varepsilon z_1, \frac{3 \varepsilon^2 z_1}{m} + i \varepsilon z_1^2 + m z_2 + \frac{m z_1^2}{2} - 2 m \varepsilon^2 z_1^2, z_2 + (1/2)z_1^2 \right)$. \\
+$[e_6, e_7] = \left(i \varepsilon + m \varepsilon^2, i \varepsilon z_1, \frac{3 \varepsilon^2 z_1}{m} + i \varepsilon z_1^2 + m z_2 + \frac{m z_1^2}{2} - 2 m \varepsilon^2 z_1^2, z_2 + (1/2)z_1^2 \right)$. \\
 
 Если принять $\varepsilon^2 = 1$, то мы получим следующее: \\
 
-$[e6, e7] = \left(i \varepsilon + m, i \varepsilon z_1, \frac{3 z_1}{m} + i \varepsilon z_1^2 + m z_2 - \frac{3m z_1^2}{2}, z_2 + (1/2)z_1^2 \right)$. \\
+$[e_6, e_7] = \left(i \varepsilon + m, i \varepsilon z_1, \frac{3 z_1}{m} + i \varepsilon z_1^2 + m z_2 - \frac{3m z_1^2}{2}, z_2 + (1/2)z_1^2 \right)$. \\
 
-Полученный результат не сходится с результатом коммутатора матрицы. Это гласит о том, что в полях была допущена ошибка. \\
+Полученный результат не сходится с результатом коммутатора матрицы. Это означает, что в полях была допущена ошибка. Мы попробуем исправить её. \\
 
-Мы попробовали изменить поле $e_7$ следующим образом: перенести $m$ из знаменателя в числитель и сделать его равным нулю. \\
+Шесть полей алгебры [7, [6, 25], 1, 1] надежные, а поле $e_7$ определяется из шести коммутационных соотношений. 
+$$e_7 = (a_7(z_1,z_2,z_3,z_4), b_7(z_1,z_2,z_3,z_4), c_7(z_1,z_2,z_3,z_4), d_7(z_1,z_2,z_3,z_4)).$$
 
-Тогда поле станет выглядеть так: $e_7 = (z_1, 2z_2, 3z_3, 3z_4).$ \\
+$[e_1,e_7] = 3 e_1 + m  e_2 = (0;0;m;3) \implies \\
+e_7 = (a_7(z_1,z_2,z_3), b_7(z_1,z_2,z_3), c_7(z_1,z_2,z_3) + m  z_4, d_7(z_1,z_2,z_3) + 3  z_4).$
+\\
 
-Тогда $[e_6, e_7] = me_5 + e_6 = e_6 = \left(i \varepsilon, i \varepsilon z_1, i \varepsilon z_1^2, z_2 + (1/2)z_1^2 \right).$ \\
+$[e_2,e_7] = -m  e_1 + 3  e_2 = (0;0;3;-m) \implies \\
+e_7 = (a_7(z_1,z_2), b_7(z_1,z_2), c_7(z_1,z_2) + m  z_4 + 3 z_3, d_7(z_1,z_2) + 3  z_4 - m  z_3).$
+\\
 
-Остальные коммутаторы, в которых присутствует поле $e_7$ останутся правильными. \\
+$[e_3,e_7] = 2  e_2 = (0;2;0;0) \implies \\
+e_7 = (a_7(z_1), b_7(z_1) + 2  z_2, c_7(z_1) + m  z_4 + 3  z_3, d_7(z_1) + 3 z_4 - m z_3).$
+\\
 
+$[e_5,e_7] = e_5 - m e_6 = (1 - i m \varepsilon ; -  i m \varepsilon z_1; z_2 -  i m \varepsilon z_1^2;2 - m z_2 -  \frac{1}{2} m z_1^2 ) \implies$
+
+\begin{equation*}
+\begin{cases}
+a'_7(z_1) = 1 - i m \varepsilon, \\
+d'_7(z_1) = -  i m \varepsilon z_1, \\
+c'_7(z_1) + 3 z_2 - b_7(z_1) - 2 z_2 = z_2 -  i m \varepsilon z_1^2, \\
+d'_7(z_1) - m z_2 = - m z_2 -  \frac{1}{2} m z_1^2 
+\end{cases}
+\implies
+\begin{cases}
+a_7(z_1) = (1 - i m \varepsilon)z_1 + A_7, \\
+b_7(z_1) =  - \frac{1}{2} i m \varepsilon z_1^2 + B_7, \\
+c_7(z_1) = - \frac{1}{2} i m \varepsilon z_1^3 + B_7 \cdot z_1 + C_7, \\
+d_7(z_1) = - \frac{m}{6} z_1^3 + D_7
+\end{cases}
+\end{equation*}\\
+$\implies e_7 = ((1 - i m \varepsilon)z_1 + A_7;  2z_2 - \frac{1}{2} i m \varepsilon z_1^2 + B_7; \\
+m z_4 + 3 z_3 - \frac{1}{2} i m \varepsilon z_1^3 + B_7 \cdot z_1 + C_7; 3 z_4 - m z_3 - \frac{m}{6} z_1^3 + D_7)$
+\\
+
+$[e_4,e_7] = 2e_4 = (0; 2 i \varepsilon; 2 i \varepsilon z_1; 2 z_1) \implies $
+
+\begin{equation*}
+\begin{cases}
+2 i \varepsilon = 2 i  \varepsilon, \\
+3 i \varepsilon z_1 + m z_1 - i \varepsilon z_1 - m \varepsilon^2 z_1 - i \varepsilon A_7 = 2 i \varepsilon z_1,\\
+- i m \varepsilon z_1 + 3 z_1 - z_1 + i m \varepsilon z_1 - A_7 =  2 z_1 \\
+
+\end{cases}
+\implies
+A_7 = 0
+\end{equation*}\\
+$\implies e_7 = ((1 - i m \varepsilon)z_1 ;  2z_2 - \frac{1}{2} i m \varepsilon z_1^2 + B_7; \\
+m z_4 + 3 z_3 - \frac{1}{2} i m \varepsilon z_1^3 + B_7 \cdot z_1 + C_7; 3 z_4 - m z_3 - \frac{m}{6} z_1^3 + D_7)$
+\\
+
+$[e_6,e_7] = m e_5 + e_6  = (m + i \varepsilon; i \varepsilon z_1; m z_2 + i \varepsilon z_1^2; z_2 + \frac{1}{2} z_1^2) \implies$
+
+\begin{equation*}
+\begin{cases}
+i \varepsilon + m \varepsilon^2= m + i \varepsilon,\\
+m \varepsilon^2 z_1 + 2 i \varepsilon z_1 - i \varepsilon z_1 - m \varepsilon^2 z_1 = i \varepsilon z_1, \\
+\frac{3}{2} m \varepsilon^2 z_1^2 + i \varepsilon B_7 + 3 i \varepsilon z_1^2 + m z_2 + \frac{1}{2} m z_1^2 - 2 i \varepsilon z_1^2 - 2 m \varepsilon^2 z_1^2 = m z_2 + i \varepsilon z_1, \\
+- \frac{1}{2} i m \varepsilon z_1^2 - i m \varepsilon z_1^2 +3 z_2 - z_1^2 + i m \varepsilon z_1^2 - 2 z_2 + \frac{1}{2} i m \varepsilon z_1^2 + B 7 = z_2 + \frac{z_1^2}{2}
+\end{cases}
+\implies
+B_7 = 0
+\end{equation*}\\
+$\implies$
+$$ e_7 = ((1 - i m \varepsilon)z_1;  2z_2 - \frac{1}{2} i m \varepsilon z_1^2; \\
+m z_4 + 3 z_3 - \frac{1}{2} i m \varepsilon z_1^3 + C_7; 3 z_4 - m z_3 - \frac{m}{6} z_1^3 + D_7)$$
+\\
 Для проверки коммутаторов и тождеств Якоби по полям были написаны программы на Maple: \\
 
 - V1_DEFAULT_COMMUTATORS.mw — с исходными полями; \\
 
 - V2_COMMUTATORS_M_IN_NUMERATOR.mw — в поле $e_7$ перенесли $m$ из знаменателя в числитель; \\
 
-- V3_COMMUTATORS_M_IN_NUMERATOR_AND_ZERO.mw — в поле $e_7$ перенесли $m$ из знаменателя в числитель и приравняли к 0;
+- V3_COMMUTATORS_M_IN_NUMERATOR_AND_ZERO.mw — в поле $e_7$ перенесли $m$ из знаменателя в числитель и приравняли к 0; \\
+
+- V4_COMMUTATORS.mw — с новым полем $e_7$, полученным в ходе рассчётов.
 
 \pagebreak
 \section{Список использованной литературы}
